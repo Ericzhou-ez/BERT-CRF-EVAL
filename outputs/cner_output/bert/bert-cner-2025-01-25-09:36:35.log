@@ -1,0 +1,115 @@
+Process rank: -1, device: cpu, n_gpu: 0, distributed training: False, 16-bits training: False
+Training/evaluation parameters Namespace(adam_epsilon=1e-08, adv_epsilon=1.0, adv_name='word_embeddings', cache_dir='', config_name='', crf_learning_rate=0.001, data_dir='/Users/ez/Downloads/BERT-NER-Pytorch-master/datasets/cner/', device=device(type='cpu'), do_adv=False, do_eval=True, do_lower_case=True, do_predict=False, do_train=True, eval_all_checkpoints=False, eval_max_seq_length=512, evaluate_during_training=False, fp16=False, fp16_opt_level='O1', gradient_accumulation_steps=1, id2label={0: 'B-HCCX', 1: 'B-HPPX', 2: 'B-MISC', 3: 'B-XH', 4: 'I-HCCX', 5: 'I-HPPX', 6: 'I-MISC', 7: 'I-XH', 8: 'O'}, label2id={'B-HCCX': 0, 'B-HPPX': 1, 'B-MISC': 2, 'B-XH': 3, 'I-HCCX': 4, 'I-HPPX': 5, 'I-MISC': 6, 'I-XH': 7, 'O': 8}, learning_rate=3e-05, local_rank=-1, logging_steps=-1, loss_type='ce', markup='bios', max_grad_norm=1.0, max_steps=-1, model_name_or_path='/Users/ez/Downloads/BERT-NER-Pytorch-master/bert-base-chinese', model_type='bert', n_gpu=0, no_cuda=False, num_train_epochs=4.0, output_dir='/Users/ez/Downloads/BERT-NER-Pytorch-master/outputs/cner_output/bert', overwrite_cache=False, overwrite_output_dir=True, per_gpu_eval_batch_size=24, per_gpu_train_batch_size=24, predict_checkpoints=0, save_steps=-1, seed=42, server_ip='', server_port='', task_name='cner', tokenizer_name='', train_max_seq_length=128, warmup_proportion=0.1, weight_decay=0.01)
+Creating features from dataset file at /Users/ez/Downloads/BERT-NER-Pytorch-master/datasets/cner/
+Processing example 0/5999
+*** Example ***
+guid: train-1
+tokens: [CLS] 简 约 韩 版 粗 跟 艾 熙 百 思 图 亲 子 鞋 冬 季 百 搭 街 头 母 女 圆 头 翻 边 绒 面 厚 底 [SEP]
+input_ids: [101, 5042, 5276, 7506, 4276, 5110, 6656, 5687, 4224, 4636, 2590, 1745, 779, 2094, 7490, 1100, 2108, 4636, 3022, 6125, 1928, 3678, 1957, 1749, 1928, 5436, 6804, 5309, 7481, 1331, 2419, 102, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+input_mask: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+segment_ids: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+label_ids: [8, 8, 8, 8, 8, 8, 8, 1, 5, 1, 5, 5, 0, 4, 4, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8]
+*** Example ***
+guid: train-2
+tokens: [CLS] 羚 跑 商 务 背 包 双 肩 包 男 士 防 盗 多 功 能 出 差 韩 版 休 闲 1 5 . 6 寸 电 脑 包 皮 潮 [SEP]
+input_ids: [101, 5403, 6651, 1555, 1218, 5520, 1259, 1352, 5504, 1259, 4511, 1894, 7344, 4668, 1914, 1216, 5543, 1139, 2345, 7506, 4276, 828, 7312, 122, 126, 119, 127, 2189, 4510, 5554, 1259, 4649, 4060, 102, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+input_mask: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+segment_ids: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+label_ids: [8, 1, 5, 8, 8, 0, 4, 0, 4, 4, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 2, 6, 6, 6, 6, 0, 4, 4, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8]
+Length mismatch between tokens and labels for train-3
+*** Example ***
+guid: train-3
+tokens: [CLS] 热 水 袋 防 爆 充 电 暖 宝 卡 通 毛 绒 萌 萌 可 爱 注 水 暖 宫 暖 手 宝 暖 水 袋 [SEP]
+input_ids: [101, 4178, 3717, 6150, 7344, 4255, 1041, 4510, 3265, 2140, 1305, 6858, 3688, 5309, 5846, 5846, 1377, 4263, 3800, 3717, 3265, 2151, 3265, 2797, 2140, 3265, 3717, 6150, 102, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+input_mask: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+segment_ids: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+label_ids: [8, 0, 4, 4, 8, 8, 0, 4, 4, 4, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 0, 4, 4, 0, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8]
+*** Example ***
+guid: train-4
+tokens: [CLS] 童 装 1 1 周 岁 1 3 儿 童 夏 装 男 童 套 装 2 0 1 7 新 款 1 0 中 大 童 1 5 男 孩 1 2 秋 季 5 潮 7 [SEP]
+input_ids: [101, 4997, 6163, 122, 122, 1453, 2259, 122, 124, 1036, 4997, 1909, 6163, 4511, 4997, 1947, 6163, 123, 121, 122, 128, 3173, 3621, 122, 121, 704, 1920, 4997, 122, 126, 4511, 2111, 122, 123, 4904, 2108, 126, 4060, 128, 102, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+input_mask: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+segment_ids: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+label_ids: [8, 0, 4, 8, 8, 8, 8, 8, 8, 8, 8, 0, 4, 8, 8, 0, 4, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8]
+*** Example ***
+guid: train-5
+tokens: [CLS] p v c 地 板 自 粘 水 泥 地 面 地 板 贴 纸 加 厚 耐 磨 防 水 地 板 革 家 用 塑 胶 地 板 贴 [SEP]
+input_ids: [101, 158, 164, 145, 1765, 3352, 5632, 5111, 3717, 3799, 1765, 7481, 1765, 3352, 6585, 5291, 1217, 1331, 5447, 4836, 7344, 3717, 1765, 3352, 7484, 2157, 4500, 1848, 5540, 1765, 3352, 6585, 102, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+input_mask: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+segment_ids: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+label_ids: [8, 8, 8, 8, 0, 4, 8, 8, 0, 4, 8, 8, 0, 4, 0, 4, 8, 8, 8, 8, 8, 8, 0, 4, 4, 8, 8, 8, 8, 0, 4, 4, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8]
+Length mismatch between tokens and labels for train-13
+Length mismatch between tokens and labels for train-14
+Length mismatch between tokens and labels for train-108
+Length mismatch between tokens and labels for train-165
+Length mismatch between tokens and labels for train-335
+Length mismatch between tokens and labels for train-338
+Length mismatch between tokens and labels for train-350
+Length mismatch between tokens and labels for train-384
+Length mismatch between tokens and labels for train-400
+Length mismatch between tokens and labels for train-412
+Length mismatch between tokens and labels for train-632
+Length mismatch between tokens and labels for train-655
+Length mismatch between tokens and labels for train-969
+Length mismatch between tokens and labels for train-1009
+Length mismatch between tokens and labels for train-1117
+Length mismatch between tokens and labels for train-1124
+Length mismatch between tokens and labels for train-1198
+Length mismatch between tokens and labels for train-1436
+Length mismatch between tokens and labels for train-1522
+Length mismatch between tokens and labels for train-1537
+Length mismatch between tokens and labels for train-1715
+Length mismatch between tokens and labels for train-1773
+Length mismatch between tokens and labels for train-1925
+Length mismatch between tokens and labels for train-1970
+Length mismatch between tokens and labels for train-2015
+Length mismatch between tokens and labels for train-2020
+Length mismatch between tokens and labels for train-2080
+Length mismatch between tokens and labels for train-2164
+Length mismatch between tokens and labels for train-2187
+Length mismatch between tokens and labels for train-2190
+Length mismatch between tokens and labels for train-2209
+Length mismatch between tokens and labels for train-2244
+Length mismatch between tokens and labels for train-2248
+Length mismatch between tokens and labels for train-2277
+Length mismatch between tokens and labels for train-2490
+Length mismatch between tokens and labels for train-2586
+Length mismatch between tokens and labels for train-2598
+Length mismatch between tokens and labels for train-2614
+Length mismatch between tokens and labels for train-2650
+Length mismatch between tokens and labels for train-2686
+Length mismatch between tokens and labels for train-2792
+Length mismatch between tokens and labels for train-3148
+Length mismatch between tokens and labels for train-3243
+Length mismatch between tokens and labels for train-3429
+Length mismatch between tokens and labels for train-3477
+Length mismatch between tokens and labels for train-3553
+Length mismatch between tokens and labels for train-3560
+Length mismatch between tokens and labels for train-3633
+Length mismatch between tokens and labels for train-3942
+Length mismatch between tokens and labels for train-4004
+Length mismatch between tokens and labels for train-4018
+Length mismatch between tokens and labels for train-4166
+Length mismatch between tokens and labels for train-4280
+Length mismatch between tokens and labels for train-4559
+Length mismatch between tokens and labels for train-4590
+Length mismatch between tokens and labels for train-4672
+Length mismatch between tokens and labels for train-4683
+Length mismatch between tokens and labels for train-5061
+Length mismatch between tokens and labels for train-5125
+Length mismatch between tokens and labels for train-5161
+Length mismatch between tokens and labels for train-5172
+Length mismatch between tokens and labels for train-5290
+Length mismatch between tokens and labels for train-5331
+Length mismatch between tokens and labels for train-5493
+Length mismatch between tokens and labels for train-5568
+Length mismatch between tokens and labels for train-5822
+Length mismatch between tokens and labels for train-5890
+Saving features into cached file /Users/ez/Downloads/BERT-NER-Pytorch-master/datasets/cner/cached_crf-train_bert-base-chinese_128_cner
+***** Running training *****
+  Num examples = 5999
+  Num Epochs = 4
+  Instantaneous batch size per GPU = 24
+  Total train batch size (w. parallel, distributed & accumulation) = 24
+  Gradient Accumulation steps = 1
+  Total optimization steps = 1000
