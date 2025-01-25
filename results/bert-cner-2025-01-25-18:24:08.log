@@ -1,0 +1,240 @@
+Process rank: -1, device: cuda, n_gpu: 1, distributed training: False, 16-bits training: False
+Training/evaluation parameters Namespace(task_name='cner', data_dir='/content/BERT-CRF-EVAL/datasets/cner/', model_type='bert', model_name_or_path='/content/BERT-CRF-EVAL/bert-base-chinese', output_dir='/content/BERT-CRF-EVAL/outputs/cner_output/bert', markup='bios', loss_type='ce', config_name='', tokenizer_name='', cache_dir='', train_max_seq_length=128, eval_max_seq_length=512, do_train=True, do_eval=True, do_predict=False, evaluate_during_training=False, do_lower_case=True, do_adv=False, adv_epsilon=1.0, adv_name='word_embeddings', per_gpu_train_batch_size=64, per_gpu_eval_batch_size=64, gradient_accumulation_steps=1, learning_rate=3e-05, crf_learning_rate=0.001, weight_decay=0.01, adam_epsilon=1e-08, max_grad_norm=1.0, num_train_epochs=10.0, max_steps=-1, warmup_proportion=0.1, logging_steps=-1, save_steps=-1, eval_all_checkpoints=False, predict_checkpoints=0, no_cuda=False, overwrite_output_dir=True, overwrite_cache=False, seed=42, fp16=False, fp16_opt_level='O1', local_rank=-1, server_ip='', server_port='', n_gpu=1, device=device(type='cuda'), id2label={0: 'B-HCCX', 1: 'B-HPPX', 2: 'B-MISC', 3: 'B-XH', 4: 'I-HCCX', 5: 'I-HPPX', 6: 'I-MISC', 7: 'I-XH', 8: 'O'}, label2id={'B-HCCX': 0, 'B-HPPX': 1, 'B-MISC': 2, 'B-XH': 3, 'I-HCCX': 4, 'I-HPPX': 5, 'I-MISC': 6, 'I-XH': 7, 'O': 8})
+Loading features from cached file /content/BERT-CRF-EVAL/datasets/cner/cached_crf-train_bert-base-chinese_128_cner
+***** Running training *****
+  Num examples = 5999
+  Num Epochs = 10
+  Instantaneous batch size per GPU = 64
+  Total train batch size (w. parallel, distributed & accumulation) = 64
+  Gradient Accumulation steps = 1
+  Total optimization steps = 940
+Loading features from cached file /content/BERT-CRF-EVAL/datasets/cner/cached_crf-dev_bert-base-chinese_512_cner
+***** Running evaluation  *****
+  Num examples = 997
+  Batch size = 64
+
+
+***** Eval results  *****
+ acc: 0.7796 - recall: 0.7707 - f1: 0.7751 - loss: 12.4384 
+***** Entity results  *****
+******* HCCX results ********
+ acc: 0.8202 - recall: 0.8040 - f1: 0.8120 
+******* HPPX results ********
+ acc: 0.7176 - recall: 0.7087 - f1: 0.7131 
+******* MISC results ********
+ acc: 0.6809 - recall: 0.7371 - f1: 0.7079 
+******* XH results ********
+ acc: 0.6637 - recall: 0.5543 - f1: 0.6041 
+Saving model checkpoint to /content/BERT-CRF-EVAL/outputs/cner_output/bert/checkpoint-94
+Saving optimizer and scheduler states to /content/BERT-CRF-EVAL/outputs/cner_output/bert/checkpoint-94
+
+
+Loading features from cached file /content/BERT-CRF-EVAL/datasets/cner/cached_crf-dev_bert-base-chinese_512_cner
+***** Running evaluation  *****
+  Num examples = 997
+  Batch size = 64
+
+
+***** Eval results  *****
+ acc: 0.8028 - recall: 0.8331 - f1: 0.8177 - loss: 9.4755 
+***** Entity results  *****
+******* HCCX results ********
+ acc: 0.8334 - recall: 0.8505 - f1: 0.8419 
+******* HPPX results ********
+ acc: 0.6975 - recall: 0.8574 - f1: 0.7692 
+******* MISC results ********
+ acc: 0.8148 - recall: 0.7629 - f1: 0.7880 
+******* XH results ********
+ acc: 0.6415 - recall: 0.7640 - f1: 0.6974 
+Saving model checkpoint to /content/BERT-CRF-EVAL/outputs/cner_output/bert/checkpoint-188
+Saving optimizer and scheduler states to /content/BERT-CRF-EVAL/outputs/cner_output/bert/checkpoint-188
+
+
+Loading features from cached file /content/BERT-CRF-EVAL/datasets/cner/cached_crf-dev_bert-base-chinese_512_cner
+***** Running evaluation  *****
+  Num examples = 997
+  Batch size = 64
+
+
+***** Eval results  *****
+ acc: 0.8364 - recall: 0.8424 - f1: 0.8394 - loss: 7.8664 
+***** Entity results  *****
+******* HCCX results ********
+ acc: 0.8509 - recall: 0.8599 - f1: 0.8554 
+******* HPPX results ********
+ acc: 0.7793 - recall: 0.8099 - f1: 0.7943 
+******* MISC results ********
+ acc: 0.8114 - recall: 0.8279 - f1: 0.8196 
+******* XH results ********
+ acc: 0.8276 - recall: 0.7191 - f1: 0.7695 
+Saving model checkpoint to /content/BERT-CRF-EVAL/outputs/cner_output/bert/checkpoint-282
+Saving optimizer and scheduler states to /content/BERT-CRF-EVAL/outputs/cner_output/bert/checkpoint-282
+
+
+Loading features from cached file /content/BERT-CRF-EVAL/datasets/cner/cached_crf-dev_bert-base-chinese_512_cner
+***** Running evaluation  *****
+  Num examples = 997
+  Batch size = 64
+
+
+***** Eval results  *****
+ acc: 0.8428 - recall: 0.8619 - f1: 0.8523 - loss: 7.8774 
+***** Entity results  *****
+******* HCCX results ********
+ acc: 0.8722 - recall: 0.8653 - f1: 0.8687 
+******* HPPX results ********
+ acc: 0.8257 - recall: 0.8616 - f1: 0.8433 
+******* MISC results ********
+ acc: 0.7875 - recall: 0.8740 - f1: 0.8285 
+******* XH results ********
+ acc: 0.6954 - recall: 0.7865 - f1: 0.7381 
+Saving model checkpoint to /content/BERT-CRF-EVAL/outputs/cner_output/bert/checkpoint-376
+Saving optimizer and scheduler states to /content/BERT-CRF-EVAL/outputs/cner_output/bert/checkpoint-376
+
+
+Loading features from cached file /content/BERT-CRF-EVAL/datasets/cner/cached_crf-dev_bert-base-chinese_512_cner
+***** Running evaluation  *****
+  Num examples = 997
+  Batch size = 64
+
+
+***** Eval results  *****
+ acc: 0.8536 - recall: 0.8757 - f1: 0.8645 - loss: 7.2020 
+***** Entity results  *****
+******* HCCX results ********
+ acc: 0.8674 - recall: 0.8875 - f1: 0.8773 
+******* HPPX results ********
+ acc: 0.8169 - recall: 0.8574 - f1: 0.8367 
+******* MISC results ********
+ acc: 0.8395 - recall: 0.8645 - f1: 0.8518 
+******* XH results ********
+ acc: 0.7844 - recall: 0.7903 - f1: 0.7873 
+Saving model checkpoint to /content/BERT-CRF-EVAL/outputs/cner_output/bert/checkpoint-470
+Saving optimizer and scheduler states to /content/BERT-CRF-EVAL/outputs/cner_output/bert/checkpoint-470
+
+
+Loading features from cached file /content/BERT-CRF-EVAL/datasets/cner/cached_crf-dev_bert-base-chinese_512_cner
+***** Running evaluation  *****
+  Num examples = 997
+  Batch size = 64
+
+
+***** Eval results  *****
+ acc: 0.8605 - recall: 0.8874 - f1: 0.8737 - loss: 7.2387 
+***** Entity results  *****
+******* HCCX results ********
+ acc: 0.8667 - recall: 0.9011 - f1: 0.8836 
+******* HPPX results ********
+ acc: 0.8815 - recall: 0.8450 - f1: 0.8629 
+******* MISC results ********
+ acc: 0.8366 - recall: 0.8740 - f1: 0.8549 
+******* XH results ********
+ acc: 0.8125 - recall: 0.8277 - f1: 0.8200 
+Saving model checkpoint to /content/BERT-CRF-EVAL/outputs/cner_output/bert/checkpoint-564
+Saving optimizer and scheduler states to /content/BERT-CRF-EVAL/outputs/cner_output/bert/checkpoint-564
+
+
+Loading features from cached file /content/BERT-CRF-EVAL/datasets/cner/cached_crf-dev_bert-base-chinese_512_cner
+***** Running evaluation  *****
+  Num examples = 997
+  Batch size = 64
+
+
+***** Eval results  *****
+ acc: 0.8723 - recall: 0.8827 - f1: 0.8774 - loss: 7.4319 
+***** Entity results  *****
+******* HCCX results ********
+ acc: 0.8820 - recall: 0.8901 - f1: 0.8861 
+******* HPPX results ********
+ acc: 0.8742 - recall: 0.8616 - f1: 0.8678 
+******* MISC results ********
+ acc: 0.8678 - recall: 0.8808 - f1: 0.8742 
+******* XH results ********
+ acc: 0.7655 - recall: 0.8315 - f1: 0.7971 
+Saving model checkpoint to /content/BERT-CRF-EVAL/outputs/cner_output/bert/checkpoint-658
+Saving optimizer and scheduler states to /content/BERT-CRF-EVAL/outputs/cner_output/bert/checkpoint-658
+
+
+Loading features from cached file /content/BERT-CRF-EVAL/datasets/cner/cached_crf-dev_bert-base-chinese_512_cner
+***** Running evaluation  *****
+  Num examples = 997
+  Batch size = 64
+
+
+***** Eval results  *****
+ acc: 0.8648 - recall: 0.8888 - f1: 0.8767 - loss: 7.8459 
+***** Entity results  *****
+******* HCCX results ********
+ acc: 0.8721 - recall: 0.8981 - f1: 0.8849 
+******* HPPX results ********
+ acc: 0.8734 - recall: 0.8409 - f1: 0.8568 
+******* MISC results ********
+ acc: 0.8520 - recall: 0.8970 - f1: 0.8739 
+******* XH results ********
+ acc: 0.7964 - recall: 0.8352 - f1: 0.8154 
+Saving model checkpoint to /content/BERT-CRF-EVAL/outputs/cner_output/bert/checkpoint-752
+Saving optimizer and scheduler states to /content/BERT-CRF-EVAL/outputs/cner_output/bert/checkpoint-752
+
+
+Loading features from cached file /content/BERT-CRF-EVAL/datasets/cner/cached_crf-dev_bert-base-chinese_512_cner
+***** Running evaluation  *****
+  Num examples = 997
+  Batch size = 64
+
+
+***** Eval results  *****
+ acc: 0.8717 - recall: 0.8919 - f1: 0.8817 - loss: 8.0738 
+***** Entity results  *****
+******* HCCX results ********
+ acc: 0.8765 - recall: 0.9017 - f1: 0.8889 
+******* HPPX results ********
+ acc: 0.8915 - recall: 0.8492 - f1: 0.8698 
+******* MISC results ********
+ acc: 0.8564 - recall: 0.8970 - f1: 0.8762 
+******* XH results ********
+ acc: 0.8192 - recall: 0.8315 - f1: 0.8253 
+Saving model checkpoint to /content/BERT-CRF-EVAL/outputs/cner_output/bert/checkpoint-846
+Saving optimizer and scheduler states to /content/BERT-CRF-EVAL/outputs/cner_output/bert/checkpoint-846
+
+
+Loading features from cached file /content/BERT-CRF-EVAL/datasets/cner/cached_crf-dev_bert-base-chinese_512_cner
+***** Running evaluation  *****
+  Num examples = 997
+  Batch size = 64
+
+
+***** Eval results  *****
+ acc: 0.8761 - recall: 0.8940 - f1: 0.8850 - loss: 7.9990 
+***** Entity results  *****
+******* HCCX results ********
+ acc: 0.8793 - recall: 0.9038 - f1: 0.8914 
+******* HPPX results ********
+ acc: 0.8906 - recall: 0.8574 - f1: 0.8737 
+******* MISC results ********
+ acc: 0.8668 - recall: 0.8902 - f1: 0.8783 
+******* XH results ********
+ acc: 0.8370 - recall: 0.8464 - f1: 0.8417 
+Saving model checkpoint to /content/BERT-CRF-EVAL/outputs/cner_output/bert/checkpoint-940
+Saving optimizer and scheduler states to /content/BERT-CRF-EVAL/outputs/cner_output/bert/checkpoint-940
+
+
+ global_step = 940, average loss = 7.154588455278823
+Saving model checkpoint to /content/BERT-CRF-EVAL/outputs/cner_output/bert
+Evaluate the following checkpoints: ['/content/BERT-CRF-EVAL/outputs/cner_output/bert']
+Loading features from cached file /content/BERT-CRF-EVAL/datasets/cner/cached_crf-dev_bert-base-chinese_512_cner
+***** Running evaluation  *****
+  Num examples = 997
+  Batch size = 64
+
+
+***** Eval results  *****
+ acc: 0.8761 - recall: 0.8940 - f1: 0.8850 - loss: 7.9990 
+***** Entity results  *****
+******* HCCX results ********
+ acc: 0.8793 - recall: 0.9038 - f1: 0.8914 
+******* HPPX results ********
+ acc: 0.8906 - recall: 0.8574 - f1: 0.8737 
+******* MISC results ********
+ acc: 0.8668 - recall: 0.8902 - f1: 0.8783 
+******* XH results ********
+ acc: 0.8370 - recall: 0.8464 - f1: 0.8417 
