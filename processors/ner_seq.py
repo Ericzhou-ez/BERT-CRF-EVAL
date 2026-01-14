@@ -94,7 +94,7 @@ def convert_examples_to_features(
         if not isinstance(example.text_a, str):
             example.text_a = " ".join(map(str, example.text_a))
 
-        tokens = tokenizer.tokenize(example.text_a)
+        tokens = list(example.text_a)
         labels = example.labels if example.labels else ["O"] * len(tokens)
 
         if len(tokens) != len(labels):
