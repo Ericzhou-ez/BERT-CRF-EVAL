@@ -127,7 +127,7 @@ def train(args, train_dataset, model, tokenizer):
                 continue
             model.train()
             batch = tuple(t.to(args.device) for t in batch)
-            inputs = {"input_ids": batch[0], "attention_mask": batch[1], "labels": batch[3]}
+            inputs = {"input_ids": batch[0], "attention_mask": batch[1], "labels": batch[4]}
             if args.model_type != "distilbert":
                 # XLM and RoBERTa don"t use segment_ids
                 inputs["token_type_ids"] = (batch[2] if args.model_type in ["bert", "xlnet"] else None)
@@ -204,7 +204,7 @@ def evaluate(args, model, tokenizer, prefix=""):
         model.eval()
         batch = tuple(t.to(args.device) for t in batch)
         with torch.no_grad():
-            inputs = {"input_ids": batch[0], "attention_mask": batch[1], "labels": batch[3]}
+            inputs = {"input_ids": batch[0], "attention_mask": batch[1], "labels": batch[4]}
             if args.model_type != "distilbert":
                 # XLM and RoBERTa don"t use segment_ids
                 inputs["token_type_ids"] = (batch[2] if args.model_type in ["bert", "xlnet"] else None)
@@ -216,7 +216,7 @@ def evaluate(args, model, tokenizer, prefix=""):
         eval_loss += tmp_eval_loss.item()
         nb_eval_steps += 1
         out_label_ids = inputs['labels'].cpu().numpy().tolist()
-        input_lens = batch[4].cpu().numpy().tolist()
+        input_lens = batch[3].cpu().numpy().tolist()
         tags = tags.squeeze(0).cpu().numpy().tolist()
         for i, label in enumerate(out_label_ids):
             temp_1 = []
