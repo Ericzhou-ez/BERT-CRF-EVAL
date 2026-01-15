@@ -59,6 +59,9 @@ class BertCrfForNer(BertPreTrainedModel):
         logits = self.classifier(sequence_output)
         outputs = (logits,)
         if labels is not None:
+            # Convert attention_mask to bool/byte for CRF numerical stability
+            if attention_mask is not None:
+                attention_mask = attention_mask.bool()
             loss = self.crf(emissions = logits, tags=labels, mask=attention_mask)
             outputs =(-1*loss,)+outputs
         return outputs # (loss), scores

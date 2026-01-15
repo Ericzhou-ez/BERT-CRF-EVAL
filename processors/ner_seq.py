@@ -184,9 +184,7 @@ class CnerProcessor(DataProcessor):
 
     def get_labels(self):
         """See base class."""
-        return ["X",'B-CONT','B-EDU','B-LOC','B-NAME','B-ORG','B-PRO','B-RACE','B-TITLE',
-                'I-CONT','I-EDU','I-LOC','I-NAME','I-ORG','I-PRO','I-RACE','I-TITLE',
-                'O','S-NAME','S-ORG','S-RACE',"[START]", "[END]"]
+        return ['B-HCCX', 'B-HPPX', 'B-MISC', 'B-XH', 'I-HCCX', 'I-HPPX', 'I-MISC', 'I-XH', 'O']
 
     def _create_examples(self, lines, set_type):
         """Creates examples for the training and dev sets."""
