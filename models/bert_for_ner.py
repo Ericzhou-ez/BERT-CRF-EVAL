@@ -43,6 +43,9 @@ class BertSoftmaxForNer(BertPreTrainedModel):
             outputs = (loss,) + outputs
         return outputs  # (loss), scores, (hidden_states), (attentions)
 
+import logging
+logger = logging.getLogger(__name__)
+
 class BertCrfForNer(BertPreTrainedModel):
     def __init__(self, config):
         super(BertCrfForNer, self).__init__(config)
@@ -64,7 +67,15 @@ class BertCrfForNer(BertPreTrainedModel):
             # Convert attention_mask to bool/byte for CRF numerical stability
             if attention_mask is not None:
                 attention_mask = attention_mask.bool()
+            
+            # DEBUG: Check logits range
+            print(f"DEBUG: Logits range: {logits.min().item()} to {logits.max().item()}")
+            
             loss = self.crf(emissions = logits, tags=labels, mask=attention_mask)
+            
+            # DEBUG: Check loss value
+            print(f"DEBUG: CRF Loss: {loss.item()}")
+            
             outputs =(-1*loss,)+outputs
         return outputs # (loss), scores
 
